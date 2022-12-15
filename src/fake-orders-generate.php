@@ -1,6 +1,7 @@
 <?php
 use Dotenv\Dotenv;
 require_once '../vendor/autoload.php';
+
 const DEFAULT_QUANTITY = 10;
 
 $dotenv = Dotenv::createUnsafeImmutable(dirname(__DIR__));
