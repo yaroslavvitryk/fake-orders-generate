@@ -1,0 +1,17 @@
+{
+    "name": "yaroslav/fake-order-generator",
+    "autoload": {
+        "psr-4": {
+            "Yaroslav\\FakeOrderGenerator\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yaroslav",
+            "email": "yaroslavvitryk80@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
