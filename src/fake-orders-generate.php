@@ -1,18 +1,16 @@
 <?php
-
 use Dotenv\Dotenv;
-const DEFAULT_QUANTITY = 10;
-
 require_once '../vendor/autoload.php';
+const DEFAULT_QUANTITY = 10;
 
 $dotenv = Dotenv::createUnsafeImmutable(dirname(__DIR__));
 $dotenv->load();
+
 try {
     $dbh = new PDO('mysql:host='.$_ENV['HOST'].';dbname='.$_ENV['DBNAME'], $_ENV['DB_USER'], $_ENV['PASSWORD']);
     parse_str(implode('&', array_slice($argv, 1)), $_GET);
     $periodInDays = $_GET['--period'];
     $quantity = $_GET['--quantity'];
-
     $mainQuantity = round($quantity / 3 * 2);
 
     $sql = 'INSERT INTO wp_posts (post_content, post_title, post_excerpt, to_ping, pinged, post_content_filtered, post_type, post_date)
